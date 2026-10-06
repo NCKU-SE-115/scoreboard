@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>作業排行榜</title>
+<style>
+  :root { color-scheme: light dark; --bg:#0d1117; --fg:#e6edf3; --mut:#8b949e;
+          --card:#161b22; --line:#30363d; --accent:#2f81f7; --good:#3fb950; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f6f8fa; --fg:#1f2328; --mut:#656d76; --card:#fff; --line:#d0d7de; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font-family:system-ui,"Noto Sans TC",sans-serif; padding:24px 16px; }
+  .wrap { max-width:820px; margin:0 auto; }
+  h1 { font-size:1.4rem; margin:0 0 4px; }
+  .meta { color:var(--mut); font-size:.85rem; margin-bottom:8px; }
+  .note { background:var(--card); border:1px solid var(--line); border-radius:8px;
+          padding:8px 12px; font-size:.85rem; color:var(--mut); margin-bottom:20px; }
+  table { width:100%; border-collapse:collapse; background:var(--card);
+          border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  th,td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); }
+  th { font-size:.8rem; color:var(--mut); font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+  tr:last-child td { border-bottom:none; }
+  .rank { width:3ch; color:var(--mut); font-variant-numeric:tabular-nums; }
+  .code { font-family:ui-monospace,monospace; }
+  .score { font-weight:700; font-variant-numeric:tabular-nums; }
+  .max,.upd,.cd { color:var(--mut); font-variant-numeric:tabular-nums; }
+  .upd,.cd { font-size:.78rem; }
+  .bar { width:24%; }
+  .bar span { display:block; height:8px; border-radius:4px; background:var(--good); min-width:2px; }
+  .empty { text-align:center; color:var(--mut); padding:28px; }
+  footer { color:var(--mut); font-size:.8rem; margin-top:16px; }
+  code { background:var(--card); border:1px solid var(--line); border-radius:5px; padding:1px 5px; }
+</style>
+<div class="wrap">
+  <h1>作業排行榜</h1>
+  <div class="meta">0 份提交 · 更新於 2026-10-06T04:53:08Z（UTC）· 僅顯示匿名代號</div>
+  <div class="note">
+    評分限制:每位同學每 60 分鐘最多評分一次。
+    「下次可評分」是你 push 後會被評分的最早時間(UTC);在那之前重複 push 不會再評。
+  </div>
+  <table>
+    <thead><tr>
+      <th>#</th><th>代號</th><th>分數</th><th>滿分</th><th></th>
+      <th>下次可評分 (UTC)</th><th>更新 (UTC)</th>
+    </tr></thead>
+    <tbody>
+<tr><td colspan="7" class="empty">還沒有任何成績</td></tr>
+    </tbody>
+  </table>
+  <footer>
+    找自己:你的代號會出現在你作業 commit 上那個「Autograder（正式）」檢查的說明裡,
+    老師發 repo 時的名冊也有。代號用祕密鹽雜湊產生,無法從帳號反推。<br>
+    （正式分數由老師的評分機計算;本頁時間皆為 UTC。）
+  </footer>
+</div>
